@@ -1,26 +1,27 @@
+import { ReactNode } from "react";
+
 interface CardProps {
-  body: string;
+  children: ReactNode;
 }
 
-function Card({ body }: CardProps) {
+function Card({ children }: CardProps) {
   return (
     <div className="card" style={{ width: "350px" }}>
-      <div className="card-body">{body}</div>
+      <div className="card-body">{children}</div>
     </div>
   );
 }
 
-function CardBody() {
+interface CardBodyProps {
+  cardTitle: string;
+  cardText: string;
+}
+
+export function CardBody({ cardTitle, cardText }: CardBodyProps) {
   return (
     <>
-      <h5 className="card-title">Card title</h5>
-      <p className="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a href="#" className="btn btn-primary">
-        Go somewhere
-      </a>
+      <h5 className="card-title">{cardTitle}</h5>
+      <p className="card-text">{cardText}</p>
     </>
   );
 }
