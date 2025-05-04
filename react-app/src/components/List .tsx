@@ -1,12 +1,22 @@
+import { MouseEvent } from "react";
+
 type Props = {
   data: string[];
 };
 
 function List({ data }: Props) {
+  const handleClick = (e: string) => {
+    console.log(e);
+  };
+
   return (
     <ul className="list-group">
       {data.map((nombre) => (
-        <li className="list-group-item" key={nombre}>
+        <li
+          onClick={() => handleClick(nombre)}
+          className="list-group-item"
+          key={nombre}
+        >
           {nombre}
         </li>
       ))}
