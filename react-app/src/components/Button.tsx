@@ -1,0 +1,22 @@
+import { ReactNode } from "react";
+
+type Props = {
+  children: ReactNode;
+  status: boolean;
+  onClick: () => void;
+};
+
+export function Button({ children, status, onClick }: Props) {
+  return (
+    <>
+      <button
+        onClick={onClick}
+        type="button"
+        disabled={status}
+        className={`${status ? "btn btn-secondary" : "btn btn-primary"}`}
+      >
+        {status ? "Cargando...." : children}
+      </button>
+    </>
+  );
+}
