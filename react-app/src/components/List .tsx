@@ -1,20 +1,22 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
 
 type Props = {
   data: string[];
 };
 
 function List({ data }: Props) {
-  const handleClick = (e: string) => {
-    console.log(e);
+  const [index, setIndex] = useState(1);
+
+  const handleClick = (i: number) => {
+    setIndex(i);
   };
 
   return (
     <ul className="list-group">
-      {data.map((nombre) => (
+      {data.map((nombre, i) => (
         <li
-          onClick={() => handleClick(nombre)}
-          className="list-group-item"
+          onClick={() => handleClick(i)}
+          className={`list-group-item ${index == i ? "active" : ""}`}
           key={nombre}
         >
           {nombre}
