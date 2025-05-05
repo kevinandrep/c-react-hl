@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import "./Button.css";
 
 type Props = {
   children: ReactNode;
@@ -6,15 +7,10 @@ type Props = {
   onClick: () => void;
 };
 
-const styles = {
-  backgroundColor: "lightBldddue",
-};
-
 export function Button({ children, status = false, onClick }: Props) {
   return (
     <>
       <button
-        style={styles}
         onClick={onClick}
         type="button"
         disabled={status}
