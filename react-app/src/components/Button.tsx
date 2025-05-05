@@ -2,11 +2,11 @@ import { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
-  status: boolean;
+  status?: boolean;
   onClick: () => void;
 };
 
-export function Button({ children, status, onClick }: Props) {
+export function Button({ children, status = false, onClick }: Props) {
   return (
     <>
       <button
