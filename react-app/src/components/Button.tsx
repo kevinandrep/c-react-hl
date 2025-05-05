@@ -6,10 +6,15 @@ type Props = {
   onClick: () => void;
 };
 
+const styles = {
+  backgroundColor: "lightBldddue",
+};
+
 export function Button({ children, status = false, onClick }: Props) {
   return (
     <>
       <button
+        style={styles}
         onClick={onClick}
         type="button"
         disabled={status}

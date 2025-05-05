@@ -22,6 +22,7 @@ function App() {
 
   const handleDel = () => {
     setLista((prev) => prev.slice(0, -1));
+    setLista(lista.slice(0, -1));
   };
 
   return (
